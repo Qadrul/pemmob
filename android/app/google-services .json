@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "482294208822",
+    "project_id": "anime-verse-802aa",
+    "storage_bucket": "anime-verse-802aa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482294208822:android:bce8b3b686c6fddfd0bb97",
+        "android_client_info": {
+          "package_name": "com.example.anime_verse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482294208822-a2unm497cvd1mmsm7cmuu9m9ik7lm0dr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anime_verse",
+            "certificate_hash": "0e0da06fa0042ab464e3af7223b41cb24b1b90f3"
+          }
+        },
+        {
+          "client_id": "482294208822-v2ada69i8p29f35mkpepku4v5igu13pj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtka-U3h9BJ_NJfo9QnP99WyK35secnfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482294208822-v2ada69i8p29f35mkpepku4v5igu13pj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
