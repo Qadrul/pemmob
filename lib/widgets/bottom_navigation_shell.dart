@@ -45,7 +45,7 @@ class BottomNavigationShell extends StatelessWidget {
           extendBody: true,
           bottomNavigationBar: Container(
             margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.04, vertical: 0),
-            height: MediaQuery.of(context).padding.bottom + screenHeight * 0.015,
+            padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
             decoration: const BoxDecoration(
               color: Color(0xFF0b395e),
             ),
@@ -89,67 +89,67 @@ class BottomNavigationShell extends StatelessWidget {
   }
 
   Widget _buildNavItem(
-    BuildContext context,
-    int index,
-    IconData icon,
-    String label,
-    int currentIndex,
-    double screenWidth,
-    double screenHeight,
-  ) {
+      BuildContext context,
+      int index,
+      IconData icon,
+      String label,
+      int currentIndex,
+      double screenWidth,
+      double screenHeight,
+      ) {
     final isActive = index == currentIndex;
 
     return isActive
-      ? GestureDetector(
-        onTap: () => _onItemTapped(context, index),
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            vertical: screenWidth * 0.025,
-            horizontal: screenWidth * 0.045,
-          ),
-          decoration: BoxDecoration(
+        ? GestureDetector(
+      onTap: () => _onItemTapped(context, index),
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          vertical: screenWidth * 0.025,
+          horizontal: screenWidth * 0.045,
+        ),
+        decoration: BoxDecoration(
             color: const Color(0xff092c47),
             borderRadius: BorderRadius.circular(screenWidth * 0.06),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  blurRadius: screenWidth * 0.02,
-                  offset: Offset(0, screenHeight * 0.005),
-                ),
-              ]
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                icon,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                blurRadius: screenWidth * 0.02,
+                offset: Offset(0, screenHeight * 0.005),
+              ),
+            ]
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              icon,
+              color: Colors.white,
+              size: screenWidth * 0.06,
+            ),
+            SizedBox(width: screenWidth * 0.02),
+            Text(
+              label,
+              style: TextStyle(
                 color: Colors.white,
-                size: screenWidth * 0.06,
+                fontWeight: FontWeight.w700,
+                fontSize: screenWidth * 0.04,
               ),
-              SizedBox(width: screenWidth * 0.02),
-              Text(
-                label,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
-                  fontSize: screenWidth * 0.04,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-      )
-      : GestureDetector(
-        onTap: () => _onItemTapped(context, index),
-        child: Padding(
-          padding: EdgeInsets.all(screenWidth * 0.02),
-          child: Icon(
-            icon,
-            color: Colors.grey.shade600,
-            size: screenWidth * 0.06,
-          ),
+      ),
+    )
+        : GestureDetector(
+      onTap: () => _onItemTapped(context, index),
+      child: Padding(
+        padding: EdgeInsets.all(screenWidth * 0.02),
+        child: Icon(
+          icon,
+          color: Colors.grey.shade600,
+          size: screenWidth * 0.06,
         ),
-      );
+      ),
+    );
   }
 
 }
