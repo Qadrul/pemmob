@@ -1,7 +1,3 @@
-// top-level imports required in Kotlin DSL
-import java.io.FileInputStream
-import java.util.Properties
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -9,14 +5,7 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
     id("com.google.gms.google-services")
 }
-// Load keystore properties
-val keystorePropertiesFile = rootProject.file("key.properties")
-val keystoreProperties = Properties()
-if (keystorePropertiesFile.exists()) {
-    FileInputStream(keystorePropertiesFile).use {
-        keystoreProperties.load(it)
-    }
-}
+
 android {
     namespace = "com.example.anime_verse"
     compileSdk = flutter.compileSdkVersion
@@ -28,16 +17,6 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
-    }
-
-    signingConfigs {
-        create("release") {
-            keyAlias = keystoreProperties["keyAlias"] as? String
-            keyPassword = keystoreProperties["keyPassword"] as? String
-            // ensure storeFile is converted to String before calling file(...)
-            storeFile = (keystoreProperties["storeFile"] as? String)?.let { file(it) }
-            storePassword = keystoreProperties["storePassword"] as? String
-        }
     }
 
     defaultConfig {
@@ -55,7 +34,7 @@ android {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 }

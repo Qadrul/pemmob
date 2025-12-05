@@ -128,9 +128,9 @@ class AuthService {
   }
 
   Future<void> _updateUserProfile(
-    Future<void> Function() updateFn,
-    String fieldName,
-  ) async {
+      Future<void> Function() updateFn,
+      String fieldName,
+      ) async {
     try {
       await updateFn();
       await _requireUser().reload();
@@ -151,7 +151,7 @@ class AuthService {
         StreamSubscription<GoogleSignInAuthenticationEvent>? subscription;
 
         subscription = GoogleSignIn.instance.authenticationEvents.listen(
-          (event) {
+              (event) {
             if (!completer.isCompleted) {
               switch (event) {
                 case GoogleSignInAuthenticationEventSignIn():
@@ -208,7 +208,7 @@ class AuthService {
 
   AuthException _handleFirebaseAuthException(FirebaseAuthException e) {
     switch (e.code) {
-      // Sign Up Errors
+    // Sign Up Errors
       case 'weak-password':
         return AuthException('Password terlalu lemah. Minimal 6 karakter.');
       case 'email-already-in-use':
@@ -216,7 +216,7 @@ class AuthService {
           'Email sudah terdaftar. Silakan login atau gunakan email lain.',
         );
 
-      // Sign In Errors
+    // Sign In Errors
       case 'user-not-found':
         return AuthException(
           'Email tidak terdaftar. Silakan daftar terlebih dahulu.',
@@ -230,33 +230,33 @@ class AuthService {
           'Akun ini telah dinonaktifkan. Hubungi administrator.',
         );
 
-      // Email Errors
+    // Email Errors
       case 'invalid-email':
         return AuthException('Format email tidak valid.');
 
-      // Rate Limiting
+    // Rate Limiting
       case 'too-many-requests':
         return AuthException(
           'Terlalu banyak percobaan. Silakan coba lagi nanti.',
         );
 
-      // Requires Recent Login
+    // Requires Recent Login
       case 'requires-recent-login':
         return AuthException(
           'Operasi sensitif. Silakan logout dan login kembali.',
         );
 
-      // Network Errors
+    // Network Errors
       case 'network-request-failed':
         return AuthException(
           'Tidak ada koneksi internet. Periksa koneksi Anda.',
         );
 
-      // Operation Not Allowed
+    // Operation Not Allowed
       case 'operation-not-allowed':
         return AuthException('Operasi tidak diizinkan. Hubungi administrator.');
 
-      // Default
+    // Default
       default:
         return AuthException('Error: ${e.message ?? e.code}');
     }

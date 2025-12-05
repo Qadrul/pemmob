@@ -1,7 +1,7 @@
 import 'package:anime_verse/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../provider/app_state_provider.dart';
+import '../providers/app_state_provider.dart';
 import '../widgets/favorite_anime_card.dart';
 
 class FavoriteScreen extends StatefulWidget {

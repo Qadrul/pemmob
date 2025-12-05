@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:anime_verse/services/auth/firestore_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../models/anime.dart';
 import '../repositories/anime_repository.dart';
 

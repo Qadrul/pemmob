@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../config/routes.dart';
-import '../provider/auth_provider.dart';
+import '../providers/auth_provider.dart';
 import '../utils/snackbar_helper.dart';
 import '../utils/validators.dart';
 

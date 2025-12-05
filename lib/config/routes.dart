@@ -21,7 +21,7 @@ class AppRoutes {
 
 GoRouter createRouter() {
   final GlobalKey<NavigatorState> rootNavigatorKey =
-      GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState>();
 
   return GoRouter(
     navigatorKey: rootNavigatorKey,
@@ -31,7 +31,7 @@ GoRouter createRouter() {
       final isAuthenticated = user != null;
       final isAuthRoute =
           state.matchedLocation == AppRoutes.signIn ||
-          state.matchedLocation == AppRoutes.signUp;
+              state.matchedLocation == AppRoutes.signUp;
 
       if (!isAuthenticated && !isAuthRoute) {
         return AppRoutes.signIn;

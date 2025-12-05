@@ -14,11 +14,11 @@ class SnackbarHelper {
   }
 
   static void _show(
-    BuildContext context,
-    String message,
-    Color color,
-    int seconds,
-  ) {
+      BuildContext context,
+      String message,
+      Color color,
+      int seconds,
+      ) {
     _currentOverlay?.remove();
     _currentOverlay = null;
 

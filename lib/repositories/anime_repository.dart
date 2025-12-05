@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/anime.dart';
+
 class AnimeRepository {
+
   static const String _baseUrl = 'https://api.jikan.moe/v4';
 
   final http.Client _client = http.Client();
@@ -14,9 +16,8 @@ class AnimeRepository {
 
       final response = await _client.get(url);
 
-      if (response.statusCode == 200) {
+      if(response.statusCode == 200) {
         final Map<String, dynamic> jsonData = json.decode(response.body);
-
         final List<dynamic> animeDataList = jsonData['data'] as List;
 
         final animeList = animeDataList.map((animeJson) {
@@ -26,16 +27,15 @@ class AnimeRepository {
         await Future.delayed(const Duration(milliseconds: 400));
 
         return animeList.where((anime) => anime.isAppropriateContent).toList();
-
       } else if (response.statusCode == 429) {
-        throw Exception('Rate limit exceeded. Please wait a moment and try again.');
-      } else if (response.statusCode == 404) {
-        throw Exception('Top anime data not found.');
+        throw Exception('Rate limit exceeded. Please wait a moment and try again');
+      } else if (response.statusCode == 404 ) {
+        throw Exception('Top anime data not found');
       } else {
         throw Exception('Failed to load top anime. Status: ${response.statusCode}');
       }
-    } catch (e) {
-      if (e is Exception) {
+    } catch (e){
+      if(e is Exception) {
         rethrow;
       }
       throw Exception('Network error: $e');

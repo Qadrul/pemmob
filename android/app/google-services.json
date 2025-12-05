@@ -14,11 +14,27 @@
       },
       "oauth_client": [
         {
+          "client_id": "482294208822-60hle1sc2j7lqru1ch4877sh6j9e7gbp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anime_verse",
+            "certificate_hash": "a7390b93120ff31d7d09ed49f7185bc733e836ae"
+          }
+        },
+        {
           "client_id": "482294208822-a2unm497cvd1mmsm7cmuu9m9ik7lm0dr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.anime_verse",
             "certificate_hash": "0e0da06fa0042ab464e3af7223b41cb24b1b90f3"
+          }
+        },
+        {
+          "client_id": "482294208822-m78crs6jvptehmsbrqma0lmotpsu3v3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anime_verse",
+            "certificate_hash": "e50acf3b373d6e2ee4f6af20dcfbb8f30ad35972"
           }
         },
         {
