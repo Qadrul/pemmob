@@ -70,7 +70,7 @@ Tampilan modern, responsif, serta mendukung **SVG assets**
 ## 🎥 Video Demo
 
 📌 **Link Video Demo:**  
-🎬 *(isi link YouTube / Google Drive di sini)*
+🎬 *(isi link YouTube / Google Drive di sini)](https://drive.google.com/drive/folders/1jQWiN8_NE0XwIZtFOOix1yydp1kFCVIA?usp=sharing)*
 
 ---
 
