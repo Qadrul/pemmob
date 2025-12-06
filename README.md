@@ -67,6 +67,13 @@ Tampilan modern, responsif, serta mendukung **SVG assets**
 
 ---
 
+## 🎥 Video Demo
+
+📌 **Link Video Demo:**  
+🎬 *(isi link YouTube / Google Drive di sini)*
+
+---
+
 ## 🚀 Cara Menjalankan Project
 
 1. Clone repository:
